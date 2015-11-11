@@ -19,7 +19,8 @@ Title: Deploying App in Heroku and Git
 
 ##########   Add to Git ######################
 
-4. Create git repository in my app's directory
+4. Before u can push an app to heroku u need to initialize a local Git repository and commit your files
+     Create git repository in my app's directory
    cmd>> git init
 	
    #### Also for making local changes #####
