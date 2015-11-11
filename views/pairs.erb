@@ -1,0 +1,10 @@
+<!-- Add names to Pair List -->
+<h2> Current attendees:
+	<p>
+<% @unarr.each do |word| %>
+	- <%= word %>
+<% end %></h2>
+<h2> Possible pairs:
+<% @hsh_pairs.each_with_index do |(name1, name2), i| %>
+ <p> <%= i+1 %>: <%= name1 %> - <%= name2 %>
+<% end %></h2>

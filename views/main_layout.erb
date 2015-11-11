@@ -1,11 +1,30 @@
 <html>
-<head>
-  <title>My Sinatra Kisha</title>
-</head>
-<body>
-  <h1>My Sinatra App</h1>
-  <%= yield %>
-</body>
-</html>
+ <head>
+ <title>Random Pairs</title>
+<style type='text/css'>
+      body {background-color: lightgrey}
+      h1 {color: purple;
+          font-family: verdana;}
+      p {color: green}
+    </style>
+ </head>
+ <body OnLoad='document.myinput.fname.focus();'>
+ <h1>Welcome to Random-Pairs</h1>
+ <h2> Please enter the attendees' names, separated by a<strong>whitespace (" ").</strong></h2>
+<form method="post" name="myinput">
+	<input type="text" name="fname">
+	<input type="submit" value="Submit" name="btnsub">
+	<input disabled type="submit" value="Append" name="btnapp">
+</form>
+<hr>
+ <%= yield %>
+ <hr>
+<h3><center>Testpage<center></h3>
+<p><%= @carr %> - count
+<p><%= @unarr %> - unique array
+<p><%= @sufarr %> - shuffle
+<p><%= @hsh_pairs %> - hash
 
-<form method='post'></form>
+
+ </body>
+</html>
