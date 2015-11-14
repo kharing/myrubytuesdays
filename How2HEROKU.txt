@@ -1,4 +1,4 @@
-Datum: 10.011.2015
+Datum: 10.11.2015
 Title: Deploying App in Heroku and Git
 #################################################
 1. Prepair your App for Heroku
