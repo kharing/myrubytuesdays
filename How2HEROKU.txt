@@ -1,4 +1,4 @@
-Datum: 10.011.2015
+Datum: 10.11.2015
 Title: Deploying App in Heroku and Git
 #################################################
 1. Prepair your App for Heroku
@@ -22,7 +22,7 @@ Title: Deploying App in Heroku and Git
 4. Before u can push an app to heroku u need to initialize a local Git repository and commit your files
      Create git repository in my app's directory
    cmd/sinatra>> git init
-   cmd/sindatra>> git add FOLDERNAME/*
+   cmd/sindatra>> git add FOLDERNAME/* #adds foldr 2 REPO
        ### Test on : git status ####
 
    cmd/sinatra>> git commit -m "Added Folder"
@@ -69,13 +69,3 @@ xx. See changes made
     cmd>> git diff <filname>
     cmd>> Output of Changes in Working progress ready to stage
     cmd>> q # to quit diff mode
-
-
-
-git clone URL
-
-git push -my changes to gitub
-git pull - Schaut ob online was neues gibt (update)
-git add . -
-commit = version name
-clone = to my comp
