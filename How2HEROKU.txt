@@ -17,13 +17,22 @@ Title: Deploying App in Heroku and Git
 3. Login to heroku with:
    cmd>> heroku login
 
-##########   Add to Git ######################
+##########   Add to Git!!! ######################
 
 4. Before u can push an app to heroku u need to initialize a local Git repository and commit your files
      Create git repository in my app's directory
-   cmd>> git init
-	
+   cmd/sinatra>> git init
+   cmd/sindatra>> git add FOLDERNAME/*
+       ### Test on : git status ####
+
+   cmd/sinatra>> git commit -m "Added Folder"
    #### Also for making local changes #####
+
+   cmd/sinatra>> git remote add REMOTENAME <URL2REPO>
+   cmd/sinatra>> git push -u REMOTENAME master
+
+	Login
+##################################################
 
 5. Add all files to git repository with:
    cmd>> git add .
@@ -56,7 +65,15 @@ xx. Updating from remote with:
 xx. Updating local changes to remote:
     cmd>> git push
 
+xx. See changes made
+    cmd>> git diff <filname>
+    cmd>> Output of Changes in Working progress ready to stage
+    cmd>> q # to quit diff mode
 
+xx. Remove Folders and Files
+    cmd>> git rm -r FOLDER/file
+    cmd>> git comit -m "Remove..."
+    cmd>> git push REMOTE/github BRANCH/master
 
 
 git clone URL
