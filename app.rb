@@ -24,11 +24,12 @@ post "/" do
 		@carr = @unarr.count.to_i # use count, size, or length of array
 		
 		if @carr%2  != 0 # Modulo is not nil, add placeholder "N.N" value
-				@unarr << "N.N."
+			@popunarr = @unarr.pop									# @unarr << "N.N."
 		end	
 
 		@sufarr = @unarr.shuffle # Shuffle Array-Elements
 		@hsh_pairs = Hash[*@sufarr.flatten] # Array to Hash, flatten: 1 Element = 1 Array
+		#@hash_pairs.map {|s|s.to_s.apitalize @popunarr
 
 # link to append seite 
 		if @btnapp then
