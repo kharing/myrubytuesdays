@@ -13,7 +13,7 @@
  <h2> Please enter the attendees' names, separated by a whitespace (" ").</h2>
 <form method="post" name="myinput">
 
-	<input type="text" name="names" value="<%= params["names"] %>"> <!--# Seb.: Returns pairs value in "text" inputbox -->
+	<input type="text" name="names" value="<%= params["names"] %>" size="60"> <!--# Seb.: Returns pairs value in "text" inputbox -->
 	<input type="submit" value="Submit" name="btnsub">
 <hr>
  <%= yield %>
