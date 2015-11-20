@@ -4,7 +4,7 @@
 
 require 'sinatra'
 require 'sinatra/reloader' # server auto-reload
-require 'pry' # binding.pry
+require 'pry' # binding.pry, ruby -r pry FILE
 
 get "/" do
 	erb :index, layout: :main_layout
@@ -12,46 +12,16 @@ end
 
 post "/" do
 		# params-hash: fname-key, values: "string of names".variable stored in fname
-		fname = params["fname"].to_s # Input stored in params-hash
-		@btnapp = params["btnapp"] # 
-
+		@btnshuff = params["btnshuff"]
+		@names = params["names"].split(" ").map {|s| s.to_s.capitalize} # Input stored in params-hash
 		
-		# string fname übergabe an array 
-		@arr = fname.split(" ").map {|s| s.to_s.capitalize} # save in array
-		@unarr = @arr.uniq # remove duplicates 
-
-		# Helper Variable to count  elements of the array 
-		@carr = @unarr.count.to_i # use count, size, or length of array
+		@namesshuff = @names.shuffle
+		@pairs = @namesshuff.each_slice(2).to_a # 2 elements in array field
 		
-		if @carr%2  != 0 # Modulo is not nil, add placeholder "N.N" value
-			@popunarr = @unarr.pop									# @unarr << "N.N."
-		end	
-
-		@sufarr = @unarr.shuffle # Shuffle Array-Elements
-		@hsh_pairs = Hash[*@sufarr.flatten] # Array to Hash, flatten: 1 Element = 1 Array
-		#@hash_pairs.map {|s|s.to_s.apitalize @popunarr
-
-# link to append seite 
-		if @btnapp then
-				@sufarr = @unarr.shuffle # Shuffle Array-Elements
-		@hsh_pairs = Hash[*@sufarr.flatten] # Array to Hash, flatten: 1 Element = 1 Array
-
-			#redirect("/append") # only get works
+		if @pairs.last.size == 1 # 1 element in array field
+			@solo_name = @pairs.delete_at(-1) # deletes last element
+			@pairs[-1] << @solo_name # append to last array field
 		end
-
+		
 erb :pairs, layout: :main_layout
-end
-################# APPEND to ARRAY #######################
-
-get "/append" do
-	erb :appendlink, layout: :main_layout
-end
-################ POST Method ############################
-post "/append" do
-	apname = params["fname"].to_s
-	# string apname übergabe an array with .split
-	@aparr = apname.split(" ").map {|s| s.to_s.capitalize}
-
-
-erb :append, layout: :main_layout
 end

@@ -1,10 +1,9 @@
 <!-- Add names to Pair List -->
-<h2> Current attendees:
-	<p>
-<% @unarr.each do |word| %>
-	- <%= word %>
-<% end %></h2>
-<h2> Possible pairs:
-<% @hsh_pairs.each_with_index do |(name1, name2), i| %>
- <p> <%= i+1 %>: <%= name1 %> - <%= name2 %>
+<h2>Current attendees:
+<p><% @names.each do |name| %>
+	<%= name %> <!-- JOIN not working here -->
+<% end %></h2> 
+<h2>Possible pairs:
+  <% @pairs.each_with_index do |pname, i| %>
+<p><%= i+1 %>: <%= pname.join(" - ") %>
 <% end %></h2>

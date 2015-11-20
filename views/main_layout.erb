@@ -8,23 +8,20 @@
       p {color: green}
     </style>
  </head>
- <body OnLoad='document.myinput.fname.focus();'>
+ <body OnLoad='document.myinput.pairs.focus();'>
  <h1>Welcome to Random-Pairs</h1>
  <h2> Please enter the attendees' names, separated by a whitespace (" ").</h2>
 <form method="post" name="myinput">
-	<input type="text" name="fname" value="<%= params["fname"] %>">
+
+	<input type="text" name="names" value="<%= params["names"] %>"> <!--# Seb.: Returns pairs value in "text" inputbox -->
 	<input type="submit" value="Submit" name="btnsub">
-	<input type="submit" value="Reshuffle" name="btnapp">
-</form>
 <hr>
  <%= yield %>
  <hr>
 <h3><center>Testpage<center></h3>
-<p><%= @carr %> - count elements of array
-<p><%= @unarr %> - unique array elements
-<p><%= @sufarr %> - shuffle array elements
-<p><%= @hsh_pairs %> - key-value pairs of hash
-
-
+<p><%= @names %> - @names array
+<p><%= @namesshuff %> - @namesshuff array
+	<p><%= @solo_name %> - @solo_name array
+<p><%= @pairs %> - @pairs array
  </body>
 </html>
